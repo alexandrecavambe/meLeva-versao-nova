@@ -35,11 +35,20 @@
             -webkit-backdrop-filter: blur(12px);
         }
 
+        img{
+            display: block;
+            width: 10vw;
+            max-width: 200px;
+            margin: 10px auto;
+        }
+
+        
+
         h3{
-            font-size: 1.8em;
+            font-size: clamp(1rem, 5vw, 2em);
             color: rgba(0, 235, 0, 0.671);
             text-align: center;
-            padding: 10px;
+            padding: 0 0 10px 0;
         }
 
         .inputs-box-label{
@@ -79,11 +88,11 @@
             }
 
             .inputs-box-label input:focus + label{
-                top: -12px;
+                transform: translateY(-23px);
                 font-size: 12px;
                 color: green;
                 font-weight: 400;
-                background: #ffffff;
+                background: greenyellow;
                 padding: 0 5px;
                 border-radius: 5px;
             } 
@@ -130,7 +139,7 @@
                 p{
                     color: #fff;
                     font-weight: 600;
-                    font-size: clamp(12px, 2.5vw, 18px);
+                    font-size: clamp(12px, 2vw, 18px);
                     
 
                     a{
@@ -143,7 +152,7 @@
 
                         &:active{
                             color: rgb(2, 187, 2);
-                            text-decoration: underline;
+                            background-color: green;
                         }
 
                         &:hover{
@@ -161,6 +170,7 @@
 </head>
 <body>
     <main class="container">
+        <img src="imagem/meLeva.png" alt="Logo do meLeva">
         <form action="">
             <h3>Registro</h3>
             <div class="inputs-box-label">
