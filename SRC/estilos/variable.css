@@ -1,0 +1,12 @@
+:root{
+    --color-escuro: #050807;
+    --color-gray: #8a8c8a;
+    --color-gray-transp: #8a8c8a18;
+    --color-white: #fff;
+    --color-green-claro: #7bc749;
+    --color-escuro-n: #131716;
+    --color-green-cl: #5dd428;
+    --color-green: #328c15;
+    --color-green-select: #274418;
+    --font-principal: "Poppins", sans-serif;
+}

@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-escuro);
+    padding: 14px;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 768px;
+    
+}
+
+#menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-menu{
+    background-color: var(--color-escuro);
+    color: var(--color-green-cl);
+    font-size: clamp(14px, 2.5em, 24px);
+    border: none;
+}
+
+.menu-user-info{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+#menu span{
+    color: #fff;
+    font-size: clamp(12px, 2em, 16px);
+    font-weight: 500;
+}
+
+#menu .text-span{
+    font-size: clamp(10px, 1.5em, 12px);
+    color: var(--color-gray);
+}
+
+#notificacao{
+    color: var(--color-gray);
+    font-size: clamp(14px, 2.5em, 24px);
+    font-weight: none;
+    padding: 10px;
+}

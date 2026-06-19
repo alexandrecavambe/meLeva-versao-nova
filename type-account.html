@@ -16,7 +16,7 @@
 
         body{
             min-height: 100vh;
-            background: #000 url('imagem/background-principal.png') no-repeat top center;
+            background: #000 url('SRC/imagem/background-principal.png') no-repeat top center;
             background-size: cover;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -59,9 +59,11 @@
             margin-bottom: 30px;
         }
 
-        button{
+        .btn{
             font-size: clamp(1rem, 3vw, 2rem);
             font-weight: 600;
+            text-decoration: none;
+            text-align: center;
             color: #fff;
             padding: 15px;
             margin: 10px;
@@ -76,7 +78,7 @@
 
         }
         
-        .btn-moto{
+        .btn-entrar{
             background-color: #000000f6;
             margin-top: 70px;
             
@@ -91,7 +93,7 @@
             }
         }
 
-        .btn-pass{
+        .btn-cadastrar{
             background-color: rgb(6, 85, 6);
 
             &:active,{
@@ -131,19 +133,19 @@
 <body>
     <main class="container">
 
-        <img src="imagem/meLeva-2.png" alt="Logo do meLeva">
+        <img src="SRC/imagem/meLeva-2.png" alt="Logo do meLeva">
 
         <h1>Bem-vindo ao meLeva</h1>
 
         <h2>O futuro da mobilidade começa aqui</h2>
 
 
-        <button type="button" class="btn-moto">Motorista</button>
-        <button type="button" class="btn-pass">Passageiro</button>
+        <a href="login.html" class=" btn btn-entrar">Entrar</a>
+        <a href="cadastro.html" class="btn btn-cadastrar">Cadastrar</a>
 
         
         <p>
-            Utlizar o nosso aplicativo significa que você concorda con nossos 
+            Utlizar o nosso aplicativo significa que você concorda com nossos 
             <a href="#">
                 Termos de Uso e Política de Privacidade
             </a>

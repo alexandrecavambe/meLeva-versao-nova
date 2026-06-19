@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="SRC/estilos/import.css">
+    <link rel="stylesheet" href="SRC/estilos/import-headers.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <button class="btn-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="menu-user-info">
+                <span>Olá, Alexandre</span>
+                <span class="text-span">Bem vindo ao meLeva</span>
+            </div>
+        </div>
+        <i class="fa-regular fa-bell" id="notificacao"></i>
+    </header>
+
+    <nav id="sidebar-top">
+        <div id="sidebar-content-top">
+            <div id="user">
+                <img src="SRC/imagem/avatar.png" alt="avatar" id="user-avatar">
+                <div class="user-info">
+                    <span class="item-description">Alexandre</span>
+                    <span class="item-description">Para onde vamos hoje?</span>
+                </div>
+            </div>
+            <ul id="side-top-itens">
+                    <li class="side-top-item active">
+                        <a href="#">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-top-item">
+                        <a href="#">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="item-description">
+                                Usuários
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-top-item">
+                        <a href="#">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="item-description">
+                                Notificações
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-top-item">
+                        <a href="#">
+                            <i class="fa-solid fa-box"></i>
+                            <span class="item-description">
+                                Produtos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-top-item">
+                        <a href="#">
+                            <i class="fa-solid fa-image"></i>
+                            <span class="item-description">
+                                Imagens
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-top-item">
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            <span class="item-description">
+                                Configurações
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="logout">
+            <a href="#" id="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-logout item-description">Logout</span>
+            </a>
+        </div>
+    </nav>
+
+    <nav id="sidebar-bottom">
+        <ul id="side-bottom-itens">
+            <li class="side-bottom-item active">
+                <a href="#">
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                        Início
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-solid fa-car"></i>
+                    <span>
+                        Viagens
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <span>
+                        Solicitar
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>
+                        Carteira
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span>
+                        Perfil
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="container">
+        <div class="insert-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="input">
+                <input type="text" name="" id="location">
+                <label for="location">Para onde você vai?</label>
+            </div>
+        </div>
+
+        <div id="Select-planos">
+            <h2>Escolha um plano</h2>
+            <div class="planos">
+                <div class="p-studant-economic">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2>meLeva Estudante</h2>
+                    <span>Desconto de 15%</span>
+                    <span>Exclusível para estudantes</span>
+                    <div class="valor">
+                        <h2>5000 kz</h2>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="p-studant-economic">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h2>meLeva Económico</h2>
+                    <span>Melhor custo benéfico</span>
+                    <span>Disponível 24h</span>
+                    <div class="valor">
+                        <h2>5000 kz</h2>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
