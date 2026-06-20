@@ -6,10 +6,38 @@
     background-color: var(--color-escuro-n);
     max-width: 260px;
     padding: 8px;
-    position: relative;
-    z-index: 90;
+    
+    position: fixed;     
+    top: 0;             
+    left: 0;            
 
-    display: ;
+    transform: translateX(-100%);   
+    transition: transform .35s ease; 
+
+    z-index: 1000;
+}
+
+#sidebar-top.active{
+    transform: translateX(0);
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s ease;
+
+    z-index: 1000;
+}
+
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
 }
 
 #sidebar-content-top{
@@ -37,12 +65,12 @@
 
 .user-info span:first-child{
     color: var(--color-white);
-    font-size: clamp(12px, 2em, 14px);
+    font-size: clamp(16px, 3vw, 24px);
 }
 
 .user-info span:last-child{
     color: var(--color-gray);
-    font-size: 12px;
+    font-size: clamp(12px, 2.5vw, 16px);
 }
 
 #side-top-itens{
@@ -53,7 +81,7 @@
 }
 
 .side-top-item{
-    padding: 10px;
+    padding: clamp(10px, 2vw, 12px);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -67,6 +95,7 @@
     display: flex;
     align-items: center;
     color: var(--color-white);
+    font-size: clamp(12px, 3vw, 20px);
 }
 
 .side-top-item a i{
@@ -85,7 +114,7 @@
 
 #logout-btn{
     color: var(--color-white);
-    font-size: clamp(14px, 2em, 16px);
+    font-size: clamp(14px, 2vw, 24px);
     text-decoration: none;
     border: none;
     padding: 12px;
@@ -104,5 +133,10 @@
 
 #logout-btn i{
     color: var(--color-green-cl);
+    font-size: clamp(14px, 3vw, 20px);
+}
+
+#logout-btn span{
+    font-size: clamp(12px, 3vw, 18px);
 }
 

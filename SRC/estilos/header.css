@@ -20,7 +20,7 @@ header{
 .btn-menu{
     background-color: var(--color-escuro);
     color: var(--color-green-cl);
-    font-size: clamp(14px, 2.5em, 24px);
+    font-size: clamp(16px, 6vw, 40px);
     border: none;
 }
 
@@ -31,18 +31,18 @@ header{
 }
 #menu span{
     color: #fff;
-    font-size: clamp(12px, 2em, 16px);
+    font-size: clamp(14px, 3vw, 24px);
     font-weight: 500;
 }
 
 #menu .text-span{
-    font-size: clamp(10px, 1.5em, 12px);
+    font-size: clamp(12px, 2vw, 16px);
     color: var(--color-gray);
 }
 
 #notificacao{
     color: var(--color-gray);
-    font-size: clamp(14px, 2.5em, 24px);
+    font-size: clamp(14px, 5vw, 35px);
     font-weight: none;
     padding: 10px;
 }

@@ -9,6 +9,7 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="overlay"></div>
     <header>
         <div id="menu">
             <button class="btn-menu">
@@ -93,48 +94,50 @@
     </nav>
 
     <nav id="sidebar-bottom">
-        <ul id="side-bottom-itens">
-            <li class="side-bottom-item active">
-                <a href="#">
-                    <i class="fa-solid fa-house"></i>
-                    <span>
-                        Início
-                    </span>
-                </a>
-            </li>
-            <li class="side-bottom-item">
-                <a href="#">
-                    <i class="fa-solid fa-car"></i>
-                    <span>
-                        Viagens
-                    </span>
-                </a>
-            </li>
-            <li class="side-bottom-item">
-                <a href="#">
-                    <i class="fa-solid fa-location-arrow"></i>
-                    <span>
-                        Solicitar
-                    </span>
-                </a>
-            </li>
-            <li class="side-bottom-item">
-                <a href="#">
-                    <i class="fa-solid fa-credit-card"></i>
-                    <span>
-                        Carteira
-                    </span>
-                </a>
-            </li>
-            <li class="side-bottom-item">
-                <a href="#">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span>
-                        Perfil
-                    </span>
-                </a>
-            </li>
-        </ul>
+        <div id="side-bottom-contents">
+            <ul id="side-bottom-itens">
+                <li class="side-bottom-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span>
+                            Início
+                        </span>
+                    </a>
+                </li>
+                <li class="side-bottom-item">
+                    <a href="#">
+                        <i class="fa-solid fa-car"></i>
+                        <span>
+                            Viagens
+                        </span>
+                    </a>
+                </li>
+                <li class="side-bottom-item">
+                    <a href="#">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        <span>
+                            Solicitar
+                        </span>
+                    </a>
+                </li>
+                <li class="side-bottom-item">
+                    <a href="#">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>
+                            Carteira
+                        </span>
+                    </a>
+                </li>
+                <li class="side-bottom-item">
+                    <a href="#">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <span>
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <main id="container">
@@ -173,5 +176,7 @@
             </div>
         </div>
     </main>
+
+    <script src="SRC/scripts/sidebar-top.js"></script>
 </body>
 </html>

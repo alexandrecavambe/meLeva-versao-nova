@@ -1,5 +1,9 @@
 body{
-    
+    background-color: var(--color-escuro);
+}
+
+body.menu-open{
+    overflow: hidden;
 }
 
 #container{
