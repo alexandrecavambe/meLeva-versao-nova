@@ -90,8 +90,12 @@ body.menu-open{
   justify-content:center;
   cursor:pointer;
 }
-.locate-fab:hover{ background: var(--color-green-select); }
-.locate-fab:active{ filter:brightness(0.95); }
+.locate-fab:hover{ 
+    background: var(--color-green-select); 
+}
+.locate-fab:active{ 
+    filter:brightness(0.95); 
+}
  
 /* ===== Marcador customizado (pin verde com brilho, igual à imagem) ===== */
 .pin-marker{

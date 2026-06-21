@@ -9,7 +9,7 @@ header{
     transform: translateX(-50%);
     width: 100%;
     max-width: 768px;
-    z-index: 10000;
+    z-index: 9000;
     
 }
 
