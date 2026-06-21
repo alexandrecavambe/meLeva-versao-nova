@@ -2,7 +2,7 @@
     background-color: var(--color-escuro);
     max-width: 768px;
     width: 100%;
-    padding: clamp(10px, 2.5vw, 18px);
+    padding: clamp(10px, 2.5vw, 14px);
     border-top: 1px solid var(--color-gray-transp);
     
     position: fixed;     
@@ -10,6 +10,7 @@
     left: 50%;
   
     transform: translate(-50%);
+    z-index: 9000;
 }
 
 #side-bottom-contents{
@@ -23,7 +24,7 @@
 }
 
 .side-bottom-item{
-    padding: clamp(5px, 2.2vw, 20px);
+    padding: clamp(5px, 2vw, 16px);
     cursor: pointer;
     border-radius: 50%;
 }

@@ -1,11 +1,131 @@
 body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    max-width: 768px;
     background-color: var(--color-escuro);
+    color:var(--color-white);
+    font-family: var(--font-principal);
+    overflow:hidden;
 }
-
+ 
 body.menu-open{
-    overflow: hidden;
+    overflow:hidden;
 }
-
+ 
 #container{
-    padding: 20px;
+    height:calc(100vh - var(--altura-header));
+    width:100%;
+    max-width:768px;
+    margin:0 auto;
+    display:flex;
+    padding:0;
+    background-color: var(--color-escuro);
+    overflow:hidden;
+}
+ 
+.map-wrap{
+  position:relative;
+  flex:1 1 auto;
+  width:100%;
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+  z-index:1;
+}
+ 
+#map{
+  width:100%;
+  height:100%;
+  background: var(--color-escuro-n);
+}
+ 
+/* ===== Botão "usar localização atual" ===== */
+.locate-pill{
+  position:absolute;
+  top:50px;
+  left:16px;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background: var(--color-escuro-n);
+  border:1px solid var(--color-gray-transp);
+  border-radius:18px;
+  padding:10px 16px;
+  color: var(--color-white);
+  font-family: var(--font-principal);
+  font-size:13.5px;
+  line-height:1.25;
+  text-align:left;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+}
+.locate-pill .dot-icon{ 
+    flex-shrink:0; 
+    display:flex; 
+}
+.locate-pill:hover{ 
+    background: var(--color-green-select); 
+}
+.locate-pill:active{ 
+    filter:brightness(0.95); 
+}
+ 
+/* ===== Botão flutuante de centralizar ===== */
+.locate-fab{
+  position:absolute;
+  bottom: calc(12px + var(--altura-header));
+  right:16px;
+  z-index:10;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background: var(--color-escuro-n);
+  border:1px solid var(--color-gray-transp);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.locate-fab:hover{ background: var(--color-green-select); }
+.locate-fab:active{ filter:brightness(0.95); }
+ 
+/* ===== Marcador customizado (pin verde com brilho, igual à imagem) ===== */
+.pin-marker{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  pointer-events:none;
+}
+.pin-glow{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background: var(--color-green-cl);
+  box-shadow:0 0 0 8px rgba(93,212,40,0.20), 0 0 22px 6px rgba(93,212,40,0.6);
+  margin-top:-4px;
+}
+ 
+
+ 
+/* ===== Ajustes visuais do Leaflet para o tema escuro ===== */
+.leaflet-control-attribution{
+  background: rgba(5,8,7,0.55) !important;
+  color: var(--color-gray) !important;
+  font-size:9px !important;
+}
+.leaflet-control-attribution a{ color: var(--color-gray) !important; }
+.leaflet-control-zoom{ display:none; }
+
+@media (min-width: 500px) {
+    .locate-fab{
+        position:absolute;
+        bottom: 210px;
+        right: 16px;
+        width: 65px;
+        height: 65px;
+    }
 }

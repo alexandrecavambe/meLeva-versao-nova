@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com">
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com">
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com">
+    <link rel="preconnect" href="https://d.basemaps.cartocdn.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="SRC/estilos/import.css">
     <link rel="stylesheet" href="SRC/estilos/import-headers.css">
@@ -141,42 +146,25 @@
     </nav>
 
     <main id="container">
-        <div class="insert-location">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="input">
-                <input type="text" name="" id="location">
-                <label for="location">Para onde você vai?</label>
-            </div>
-        </div>
-
-        <div id="Select-planos">
-            <h2>Escolha um plano</h2>
-            <div class="planos">
-                <div class="p-studant-economic">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h2>meLeva Estudante</h2>
-                    <span>Desconto de 15%</span>
-                    <span>Exclusível para estudantes</span>
-                    <div class="valor">
-                        <h2>5000 kz</h2>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <div class="p-studant-economic">
-                    <i class="fa-solid fa-leaf"></i>
-                    <h2>meLeva Económico</h2>
-                    <span>Melhor custo benéfico</span>
-                    <span>Disponível 24h</span>
-                    <div class="valor">
-                        <h2>5000 kz</h2>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
+    <!-- Mapa -->
+        <div class="map-wrap">
+            <div id="map"></div>
+    
+            <button class="locate-pill" id="use-current-location">
+            <span class="dot-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#5dd428" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#5dd428" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <span>Usar a minha<br>localização atual</span>
+            </button>
+    
+            <button class="locate-fab" id="recenter-btn" aria-label="Centralizar mapa">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#5dd428" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#5dd428" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
         </div>
     </main>
-
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="SRC/scripts/sidebar-top.js"></script>
+    <script src="SRC/scripts/maps.js"></script>
 </body>
 </html>
