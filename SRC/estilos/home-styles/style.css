@@ -97,7 +97,7 @@ body.menu-open{
     filter:brightness(0.95); 
 }
  
-/* ===== Marcador customizado (pin verde com brilho, igual à imagem) ===== */
+/* Marcador customizado*/
 .pin-marker{
   display:flex;
   flex-direction:column;
@@ -127,9 +127,17 @@ body.menu-open{
 @media (min-width: 500px) {
     .locate-fab{
         position:absolute;
-        bottom: 210px;
-        right: 16px;
-        width: 65px;
-        height: 65px;
+        bottom: 190px;
+        right: 24px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .locate-pill{
+      top: 60px;
+      gap: 12px;
+      padding: 20px 26px;
+      font-size: 18px;
+      line-height: 1.50;
     }
 }

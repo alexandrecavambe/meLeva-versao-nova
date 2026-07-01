@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="./SRC/estilos/solicitar-styles/style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="SRC/estilos/import.css">
+<title>Solicitar viagem</title>
+</head>
+<body>
+<nav id="sidebar-bottom">
+    <div id="side-bottom-contents">
+        <ul id="side-bottom-itens">
+            <li class="side-bottom-item ">
+                <a href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                        Início
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-solid fa-car"></i>
+                    <span>
+                        Viagens
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="solicitar-v.html">
+                    <i class="fa-solid fa-location-arrow active"></i>
+                    <span>
+                        Solicitar
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>
+                        Carteira
+                    </span>
+                </a>
+            </li>
+            <li class="side-bottom-item">
+                <a href="#">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span>
+                        Perfil
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <a href="home.html" class="icon-btn" id="back-btn" aria-label="Voltar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <h1>Solicitar viagem</h1>
+  </div>
+
+  <!-- Map -->
+  <div class="map-wrap">
+    <div id="map"></div>
+
+    <button class="locate-pill" id="use-current-location">
+      <span class="dot-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#37e85b" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#37e85b" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <span>Usar a minha<br>localização atual</span>
+    </button>
+
+    <button class="locate-fab" id="recenter-btn" aria-label="Centralizar mapa">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#37e85b" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#37e85b" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <!-- Bottom sheet -->
+  <div class="sheet">
+    <div class="grabber"></div>
+
+    <div class="field-group">
+      <div class="field" id="origin-field">
+        <span class="field-dot dot-filled"></span>
+        <div class="field-text">
+          <span class="field-label">Local de partida</span>
+          <span class="field-value" id="origin-value">A minha localização</span>
+        </div>
+        <span class="field-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#37e85b" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#37e85b" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+
+      <div class="field-divider">
+        <span class="dash-line"></span>
+      </div>
+
+      <div class="field" id="dest-field">
+        <span class="field-dot dot-outline"></span>
+        <div class="field-text">
+          <input type="text" id="dest-input" class="field-value field-input" placeholder="Para onde vai?" autocomplete="off">
+        </div>
+        <span class="field-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#37e85b" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="recent-header">
+      <span>Sugestões recentes</span>
+      <a href="#" class="see-all">Ver todos</a>
+    </div>
+
+    <div class="recent-list" id="recent-list">
+      <button class="recent-item" data-name="Casa" data-address="Maianga, Luanda" data-lat="-8.8200" data-lng="13.2250">
+        <span class="recent-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-8 9 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="recent-text">
+          <span class="recent-title">Casa</span>
+          <span class="recent-sub">Maianga, Luanda</span>
+        </span>
+        <span class="star">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#8a8f98" stroke-width="1.6"/></svg>
+        </span>
+      </button>
+
+      <button class="recent-item" data-name="Trabalho" data-address="Talatona, Luanda" data-lat="-8.9180" data-lng="13.1820">
+        <span class="recent-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="white" stroke-width="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="white" stroke-width="2"/></svg></span>
+        <span class="recent-text">
+          <span class="recent-title">Trabalho</span>
+          <span class="recent-sub">Talatona, Luanda</span>
+        </span>
+        <span class="star">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#8a8f98" stroke-width="1.6"/></svg>
+        </span>
+      </button>
+
+      <button class="recent-item" data-name="Shopping Fortaleza" data-address="Avenida Talatona, Luanda" data-lat="-8.9100" data-lng="13.1900">
+        <span class="recent-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 1114 0c0 5.5-7 11-7 11z" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="white" stroke-width="2"/></svg></span>
+        <span class="recent-text">
+          <span class="recent-title">Shopping Fortaleza</span>
+          <span class="recent-sub">Avenida Talatona, Luanda</span>
+        </span>
+        <span class="star">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#8a8f98" stroke-width="1.6"/></svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="trip-stats" id="trip-stats">
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-10 4 7 3-5 6 8" stroke="#37e85b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="stat-text">
+          <span class="stat-label">Distância</span>
+          <span class="stat-value" id="stat-distance">4,2 km</span>
+        </div>
+      </div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#37e85b" stroke-width="2"/><path d="M12 7v5l4 2" stroke="#37e85b" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="stat-text">
+          <span class="stat-label">Tempo estimado</span>
+          <span class="stat-value" id="stat-time">12 min</span>
+        </div>
+      </div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="13" rx="2" stroke="#37e85b" stroke-width="2"/><path d="M16 6V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v1" stroke="#37e85b" stroke-width="2"/><circle cx="17" cy="13" r="1.4" fill="#37e85b"/></svg>
+        <div class="stat-text">
+          <span class="stat-label">Preço estimado</span>
+          <span class="stat-value" id="stat-price">2.500 Kz</span>
+        </div>
+        <span class="info-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8a8f98" stroke-width="1.6"/><path d="M12 11v5M12 8h.01" stroke="#8a8f98" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <button class="confirm-btn" id="confirm-btn">
+      <span>Confirmar destino</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0b0d10" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="SRC/scripts/script-solicitar/script.js"></script>
+<script src="SRC/scripts/script-solicitar/maps.js"></script>
+
+</body>
+</html>

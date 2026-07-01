@@ -1,0 +1,405 @@
+:root{
+  --field-bg: color-mix(in srgb, var(--color-escuro-n) 82%, var(--color-gray) 18%);
+  --text-faint: color-mix(in srgb, var(--color-gray) 65%, transparent 35%);
+  --divider: var(--color-gray-transp);
+  --accent-shadow: rgba(93, 212, 40, 0.18);
+  --accent-shadow-strong: rgba(93, 212, 40, 0.55);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+}
+
+
+
+html, body{
+  background: var(--color-escuro);
+  color: var(--color-white);
+  font-family: var(--font-principal), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container{
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-escuro);
+  position: relative;
+}
+
+/* Top bar */
+.topbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 20px) clamp(10px, 2vw, 12px);
+  flex-shrink: 0;
+}
+.topbar h1{
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+.icon-btn{
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background .15s ease;
+}
+.icon-btn:hover{ 
+  background: var(--color-gray-transp); 
+}
+.icon-btn:active{ 
+  background: color-mix(in srgb, var(--color-gray-transp) 60%, var(--color-white) 40%); 
+}
+
+/* Map */
+.map-wrap{
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+#map{
+  width: 100%;
+  height: 100%;
+  background: var(--color-escuro);
+}
+
+.locate-pill{
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: color-mix(in srgb, var(--color-escuro-n) 92%, transparent 8%);
+  border: 1px solid var(--color-gray-transp);
+  border-radius: 18px;
+  padding: 10px 16px;
+  color: var(--color-white);
+  font-size: clamp(12.5px, 2.5vw, 14px);
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.locate-pill .dot-icon{ 
+  flex-shrink: 0; 
+  display: flex; 
+}
+
+.locate-fab{
+  position: absolute;
+  bottom: 18px;
+  right: 16px;
+  z-index: 500;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-escuro-n) 92%, transparent 8%);
+  border: 1px solid var(--color-gray-transp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Custom leaflet marker */
+.pin-marker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pin-glow{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-green-cl);
+  box-shadow: 0 0 0 8px var(--accent-shadow), 0 0 18px 4px var(--accent-shadow-strong);
+  margin-top: -4px;
+}
+
+/* Bottom sheet */
+.sheet{
+  flex-shrink: 0;
+  background: var(--color-escuro-n);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  padding: 10px clamp(14px, 4vw, 20px) calc(clamp(18px, 5vw, 24px) + 90px);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+  z-index: 600;
+}
+.grabber{
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--color-gray) 45%, var(--color-escuro-n) 55%);
+  margin: 4px auto 14px;
+}
+
+.field{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--field-bg);
+  border-radius: var(--radius-md);
+  padding: clamp(12px, 3vw, 15px) 14px;
+  cursor: text;
+}
+.field-dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-filled{ background: var(--color-green-cl); }
+.dot-outline{ border: 2px solid var(--color-green-cl); background: transparent; }
+
+.field-text{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.field-label{
+  font-size: 12px;
+  color: var(--color-gray);
+}
+.field-value{
+  font-size: clamp(15px, 2.5vw, 16px);
+  font-weight: 600;
+  color: var(--color-white);
+}
+.field-input{
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-weight: 600;
+  width: 100%;
+}
+.field-input::placeholder{
+  color: var(--color-gray);
+  font-weight: 400;
+}
+.field-icon{ flex-shrink: 0; display: flex; }
+
+.field-divider{
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  height: 14px;
+}
+.dash-line{
+  width: 2px;
+  height: 14px;
+  background-image: linear-gradient(var(--text-faint) 60%, transparent 40%);
+  background-size: 2px 7px;
+  background-repeat: repeat-y;
+  opacity: 0.6;
+}
+
+.recent-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 2px 8px;
+}
+.recent-header span{
+  font-size: 14px;
+  color: var(--color-gray);
+}
+.see-all{
+  font-size: 14px;
+  color: var(--color-green-cl);
+  text-decoration: none;
+}
+
+.recent-list{
+  background: var(--field-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.recent-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: clamp(12px, 3vw, 14px);
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid var(--divider);
+  transition: background .15s ease;
+}
+.recent-item:last-child{ border-bottom: none; }
+.recent-item:hover, .recent-item:active{ background: var(--color-gray-transp); }
+
+.recent-icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-green) 30%, var(--color-escuro-n) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.recent-text{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.recent-title{
+  font-size: clamp(14px, 2.5vw, 15px);
+  font-weight: 600;
+  color: var(--color-white);
+}
+.recent-sub{
+  font-size: 13px;
+  color: var(--color-gray);
+}
+.star{ flex-shrink: 0; display: flex; }
+
+.trip-stats{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--field-bg);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-top: 16px;
+  position: relative;
+}
+.trip-stats.visible{ display: flex; }
+.stat{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.stat-text{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.stat-label{
+  font-size: 11.5px;
+  color: var(--color-gray);
+  white-space: nowrap;
+}
+.stat-value{
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-white);
+}
+.info-icon{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.confirm-btn{
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--color-green-claro), var(--color-green-cl));
+  border: none;
+  border-radius: 30px;
+  padding: clamp(15px, 3vw, 17px) 0;
+  font-size: clamp(15px, 2.5vw, 16.5px);
+  font-weight: 700;
+  color: var(--color-escuro);
+  cursor: pointer;
+}
+.confirm-btn.visible{ display: flex; }
+.confirm-btn:active{ filter: brightness(0.95); }
+
+/* Leaflet overrides para tema escuro */
+.leaflet-control-attribution{
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: var(--color-gray) !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a{ color: var(--color-gray) !important; }
+.leaflet-control-zoom{ display: none; }
+
+@media (min-width: 500px) {
+  .container{ 
+    max-width: 560px; 
+  }
+
+  .sheet{
+    padding: 10px clamp(18px, 4vw, 24px) calc(clamp(20px, 5vw, 26px) + 100px);
+  }
+
+  .topbar h1{ 
+    font-size: 23px; 
+  }
+
+  .field{ 
+    padding: 16px; 
+  }
+
+  .recent-icon{ 
+    width: 38px; 
+    height: 38px; 
+  }
+}
+
+@media (min-width: 768px) {
+  .container{ 
+    max-width: 768px; 
+  }
+
+  .sheet{
+    padding: 12px 28px calc(28px + 110px);
+  }
+
+  .topbar{ 
+    padding: 18px 22px 14px; 
+  }
+  .topbar h1{ 
+    font-size: 25px; 
+  }
+
+  .field{ 
+    padding: 18px; 
+  }
+  .field-value{ 
+    font-size: 17px; 
+  }
+
+  .recent-icon{ 
+    width: 42px; 
+    height: 42px; 
+  }
+  .recent-title{ 
+    font-size: 16px; 
+  }
+
+  .confirm-btn{ 
+    font-size: 17.5px; 
+    padding: 18px 0; 
+  }
+}

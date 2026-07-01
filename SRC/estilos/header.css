@@ -47,3 +47,16 @@ header{
     font-weight: none;
     padding: 10px;
 }
+
+@media (min-width: 500px) {
+    #menu span{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#menu .text-span{
+    font-size: 20px;
+    color: var(--color-gray);
+}
+}
